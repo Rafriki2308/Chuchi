@@ -3,30 +3,30 @@ package com.bosonic.dynamicController.application;
 import com.bosonic.dynamicController.domain.ControllerObject;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @Service
 public class ServiceControllerObject {
 
     public static ControllerObject controllerObject = new ControllerObject();
-    public ControllerObject returnPath(String path, String path2, String nombre, String ciudad){
 
-        if(path!=null){
+    public ControllerObject returnPath(String path, String path2, Map<String, String> query,
+                                       Map<String, String> header) {
+
+        if (path != null) {
             controllerObject.addPath(path);
         }
-        if(path2!=null){
+        if (path2 != null) {
             controllerObject.addPath(path2);
         }
 
-        if(nombre!=null){
-            controllerObject.addHeader("nombre", nombre);
+        if (query != null) {
+            controllerObject.addQuery(query);
         }
 
-        if(ciudad!=null){
-            controllerObject.addHeader("ciudad", ciudad);
+        if (header != null) {
+            controllerObject.addHeader(header);
         }
-
         return controllerObject;
     }
 }
