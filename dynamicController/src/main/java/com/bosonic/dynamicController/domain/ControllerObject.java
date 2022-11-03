@@ -36,15 +36,14 @@ public class ControllerObject {
 
     public void addPath(String path) {
         paths.add(path);
-
     }
 
-    public void addQuery(String key1, String key2) {
-        querys.put(key1, key2);
+    public void addQuery(Map query) {
+        querys.putAll(query);
     }
 
-    public void addHeader(String key1, String key2) {
-        headers.put(key1, key2);
+    public void addHeader(Map header) {
+        headers.putAll(header);
     }
 
 
