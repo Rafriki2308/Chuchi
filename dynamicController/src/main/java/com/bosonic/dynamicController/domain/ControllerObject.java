@@ -2,6 +2,7 @@ package com.bosonic.dynamicController.domain;
 
 import lombok.Data;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -34,8 +35,8 @@ public class ControllerObject {
         return headers;
     }
 
-    public void addPath(String path) {
-        paths.add(path);
+    public void addPath(List<String> paths) {
+        this.paths.addAll(paths);
     }
 
     public void addQuery(Map query) {

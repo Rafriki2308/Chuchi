@@ -3,6 +3,10 @@ package com.bosonic.dynamicController.application;
 import com.bosonic.dynamicController.domain.ControllerObject;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -10,14 +14,16 @@ public class ServiceControllerObject {
 
     public static ControllerObject controllerObject = new ControllerObject();
 
-    public ControllerObject returnPath(String path, String path2, Map<String, String> query,
-                                       Map<String, String> header) {
+    public ControllerObject returnPath(Map<String, String> query,
+                                       Map<String, String> header, HttpServletRequest request) {
 
-        if (path != null) {
-            controllerObject.addPath(path);
-        }
-        if (path2 != null) {
-            controllerObject.addPath(path2);
+        if (request.getRequestURI() != null) {
+            //List<String> paths = new ArrayList<>();
+            //String[] pathsArray = request.getRequestURI().split("/");
+            List<String> paths = new ArrayList<String>(Arrays.asList(request.getRequestURI().split("/")));
+            //paths = Arrays.asList(pathsArray);
+            paths.remove(0);
+            controllerObject.addPath(paths);
         }
 
         if (query != null) {

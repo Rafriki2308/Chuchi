@@ -17,12 +17,10 @@ public class Controller {
     @Autowired
     private ServiceControllerObject sc;
 
-    @GetMapping(value = {"*", "{path}", "{path}/{path2}"})
-    public Object entryOther(@PathVariable(required = false) String path,
-                             @PathVariable(required = false) String path2,
-                             @RequestParam(required = false) Map<String, String> query,
+    @GetMapping(value = "**")
+    public Object entryOther(@RequestParam(required = false) Map<String, String> query,
                              @RequestHeader(required = false) Map<String, String> header,
-                             @RequestBody (required = false) String body,
+                             @RequestBody(required = false) String body,
                              HttpServletRequest request,
                              ServletResponse response) {
 
@@ -30,11 +28,11 @@ public class Controller {
             return new ModelAndView("redirect:/salta");
         }
 
-        if(request.getHeader("ADD") != null && body != null){
+        if (request.getHeader("ADD") != null && body != null) {
             return body + " modificado";
         }
 
-        return sc.returnPath(path, path2, query, header);
+        return sc.returnPath(query, header, request);
     }
 
     @GetMapping(value = {"/", "one"})
