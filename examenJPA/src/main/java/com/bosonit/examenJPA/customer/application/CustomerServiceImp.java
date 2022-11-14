@@ -18,8 +18,5 @@ public class CustomerServiceImp implements CustomerService {
         return customerRepository.save(customer);
     }
 
-    public CustomerOutputDto getCustomerById(int id) throws Exception{
-        Integer idObject = Integer.valueOf(id);
-        return new CustomerOutputDto(customerRepository.findCustomerById(idObject));
-    };
+
 }
