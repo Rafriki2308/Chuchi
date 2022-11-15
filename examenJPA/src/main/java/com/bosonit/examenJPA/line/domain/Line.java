@@ -1,7 +1,7 @@
 package com.bosonit.examenJPA.line.domain;
 
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
-import com.bosonit.examenJPA.line.infraestructure.controller.output.LineOutputDto;
+import com.bosonit.examenJPA.line.infraestructure.controller.input.LineInputDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,10 +33,10 @@ public class Line {
     private HeaderBill headerBill;
 
 
-    public Line(LineOutputDto lineOutputDto, HeaderBill headerBill){
-        setProdName(lineOutputDto.getProNomb());
+    public Line(LineInputDto lineOutputDto, HeaderBill headerBill){
+        setProdName(lineOutputDto.getProducto());
         setPrice(lineOutputDto.getCantidad());
-        setAmountProduct(lineOutputDto.getPrecio());
+        setAmountProduct(lineOutputDto.getImporte());
         setHeaderBill(headerBill);
     }
 
