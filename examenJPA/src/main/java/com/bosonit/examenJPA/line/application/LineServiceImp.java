@@ -5,7 +5,6 @@ import com.bosonit.examenJPA.headerBill.application.HeaderBillServiceImp;
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
 import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDto;
 import com.bosonit.examenJPA.line.domain.Line;
-import com.bosonit.examenJPA.line.infraestructure.controller.input.LinesInputDto;
 import com.bosonit.examenJPA.line.infraestructure.controller.output.LineOutputDto;
 import com.bosonit.examenJPA.line.infraestructure.repository.LineRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,14 +26,14 @@ public class LineServiceImp implements LineService{
     };
 
 
-    public FacturaOutputDto addLineWithDto(LinesInputDto linesInputDto, String idFra){
+    public FacturaOutputDto addLineWithDto(LineOutputDto lineOutputDto, String idFra){
 
         HeaderBill headerBill = headerBillServiceImp.getHeaderBillByIdEntity(Integer.parseInt(idFra));
         if(headerBill==null){
             throw new EntityNotFoundException("Factura no encontrada");
         }
 
-        Line line = new Line(linesInputDto,headerBill);
+        Line line = new Line(lineOutputDto,headerBill);
         Line line1 = lineRepository.save(line);
 
         return headerBillServiceImp.getHeaderBillById(line1.getHeaderBill().getId());

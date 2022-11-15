@@ -1,7 +1,7 @@
 package com.bosonit.examenJPA.line.domain;
 
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
-import com.bosonit.examenJPA.line.infraestructure.controller.input.LinesInputDto;
+import com.bosonit.examenJPA.line.infraestructure.controller.output.LineOutputDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,16 +29,21 @@ public class Line {
     @Column(name="precio")
     private double price;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_factura")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private HeaderBill headerBill;
 
 
-    public Line(LinesInputDto linesInputDto, HeaderBill headerBill){
-        setProdName(linesInputDto.getProducto());
-        setPrice(linesInputDto.getCantidad());
-        setAmountProduct(linesInputDto.getImporte());
+    public Line(LineOutputDto lineOutputDto, HeaderBill headerBill){
+        setProdName(lineOutputDto.getProNomb());
+        setPrice(lineOutputDto.getCantidad());
+        setAmountProduct(lineOutputDto.getPrecio());
         setHeaderBill(headerBill);
+    }
+
+    public Line(String prodName, double amountProduct, double price){
+        setProdName(prodName);
+        setAmountProduct(amountProduct);
+        setPrice(price);
     }
 
     public Line(String prodName, double amountProduct, double price, HeaderBill headerBill){

@@ -2,7 +2,6 @@ package com.bosonit.examenJPA.line.application;
 
 import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDto;
 import com.bosonit.examenJPA.line.domain.Line;
-import com.bosonit.examenJPA.line.infraestructure.controller.input.LinesInputDto;
 import com.bosonit.examenJPA.line.infraestructure.controller.output.LineOutputDto;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +9,6 @@ import org.springframework.stereotype.Service;
 public interface LineService {
 
     public LineOutputDto addLine(Line line);
-    public FacturaOutputDto addLineWithDto(LinesInputDto linesInputDto, String idFra);
+    public FacturaOutputDto addLineWithDto(LineOutputDto lineOutputDto, String idFra);
 
 }

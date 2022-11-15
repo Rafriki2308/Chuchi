@@ -7,4 +7,5 @@ public interface CustomerService {
 
     public Customer addCustomer(Customer customer) throws Exception;
 
+    public CustomerOutputDto getCustomerById(int id) throws Exception;
 }

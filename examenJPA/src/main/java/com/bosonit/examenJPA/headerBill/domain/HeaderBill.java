@@ -37,4 +37,18 @@ public class HeaderBill {
         setCustomer(customer);
     }
 
+    public HeaderBill(Double importeFra, Customer customer, Line line){
+        setImporteFra(importeFra);
+        setCustomer(customer);
+        lineas.add(line);
+    }
+
+    public HeaderBill(Double importeFra, Customer customer, List<Line> lines){
+        setImporteFra(importeFra);
+        setCustomer(customer);
+        setLineas(lines);
+    }
+
+
+
 }
