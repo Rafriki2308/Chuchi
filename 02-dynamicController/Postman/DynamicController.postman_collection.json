@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "48654bed-4d05-4cc7-b35b-ad1fb0998a6d",
+		"name": "DynamicController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dynamicQuery",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true,
+					"connection": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "REDIRIGE",
+						"value": "SALTA",
+						"type": "default",
+						"disabled": true
+					},
+					{
+						"key": "ADD",
+						"value": "prueba",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "prueba",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prueba/prueba2?nombre=lorena&ciudad=granada&Otro=parametro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prueba",
+						"prueba2"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "lorena"
+						},
+						{
+							"key": "ciudad",
+							"value": "granada"
+						},
+						{
+							"key": "Otro",
+							"value": "parametro"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
