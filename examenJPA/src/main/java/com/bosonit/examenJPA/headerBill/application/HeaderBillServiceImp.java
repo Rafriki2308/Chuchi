@@ -1,5 +1,6 @@
 package com.bosonit.examenJPA.headerBill.application;
 
+import com.bosonit.examenJPA.exception.EntityNotFoundException;
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
 import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDto;
 import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDtoResponse;
@@ -40,8 +41,10 @@ public class HeaderBillServiceImp implements HeaderBillService{
     public void deleteBillById(String id){
 
         HeaderBill bill = headerBillRepository.findHeaderBillById(Integer.parseInt(id));
+        if (bill == null) {
+            throw new EntityNotFoundException("Factura no encontrada");
+        }
         headerBillRepository.delete(bill);
     }
-
 
 }

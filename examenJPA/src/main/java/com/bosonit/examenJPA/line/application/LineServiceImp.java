@@ -14,30 +14,33 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class LineServiceImp implements LineService{
+public class LineServiceImp implements LineService {
 
     @Autowired
     private final LineRepository lineRepository;
     @Autowired
     private final HeaderBillServiceImp headerBillServiceImp;
 
-    public LineOutputDto addLine(Line line){
+    public LineOutputDto addLine(Line line) {
 
         return new LineOutputDto(lineRepository.save(line));
-    };
+    }
+
+    ;
 
 
-    public FacturaOutputDto addLineWithDto(LineInputDto lineInputDto, String idFra){
+    public FacturaOutputDto addLineWithDto(LineInputDto lineInputDto, String idFra) {
 
         HeaderBill headerBill = headerBillServiceImp.getHeaderBillByIdEntity(Integer.parseInt(idFra));
-        if(headerBill==null){
+        if (headerBill == null) {
             throw new EntityNotFoundException("Factura no encontrada");
         }
 
-        Line line = new Line(lineInputDto,headerBill);
+        Line line = new Line(lineInputDto, headerBill);
         Line line1 = lineRepository.save(line);
 
         return headerBillServiceImp.getHeaderBillById(line1.getHeaderBill().getId());
-    };
+    }
 
 }
+
