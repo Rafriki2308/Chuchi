@@ -14,12 +14,8 @@ public class CustomerServiceImp implements CustomerService {
     @Autowired
     private final CustomerRepository customerRepository;
 
+    /*Método que toma un objeto de tipo Customer y lo hace persistente en la BD*/
     public Customer addCustomer(Customer customer){
         return customerRepository.save(customer);
     }
-
-    public CustomerOutputDto getCustomerById(int id) throws Exception{
-        Integer idObject = Integer.valueOf(id);
-        return new CustomerOutputDto(customerRepository.findCustomerById(idObject));
-    };
 }

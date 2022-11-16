@@ -19,7 +19,7 @@ import java.util.List;
 public class FacturaOutputDto {
 
     @Autowired
-    @JsonIgnore
+    @JsonIgnore //Esta anotacion evita que se muestre por pantalla este atributo
     private LineResponseDto lineResponseDto;
 
     private int idFra;

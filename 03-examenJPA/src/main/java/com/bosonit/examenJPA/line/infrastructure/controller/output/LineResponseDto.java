@@ -9,6 +9,8 @@ import java.util.List;
 @Component
 public class LineResponseDto {
 
+
+    /*Este metodo toma una lista de Facturas y transforma en una lista de tipo FacturaOutputDto*/
     public static List<LineOutputDto> mappingLineToLineDto(List<Line> lines) {
         List<LineOutputDto> linesOutputDtos = new ArrayList<>();
 

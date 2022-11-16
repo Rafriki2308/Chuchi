@@ -21,7 +21,6 @@ public class HeaderBillServiceImp implements HeaderBillService{
     @Autowired
     private FacturaOutputDtoResponse facturaOutputDtoResponse;
 
-
     public FacturaOutputDto addHeaderBill(HeaderBill headerBill){
         return new FacturaOutputDto(headerBillRepository.save(headerBill));
     };
