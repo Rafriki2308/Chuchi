@@ -1,7 +1,7 @@
 package com.bosonit.examenJPA.headerBill.application;
 
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
-import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDto;
+import com.bosonit.examenJPA.headerBill.infrastructure.output.FacturaOutputDto;
 import org.springframework.stereotype.Service;
 
 @Service

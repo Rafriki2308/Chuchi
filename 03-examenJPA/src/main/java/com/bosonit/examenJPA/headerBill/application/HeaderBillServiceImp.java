@@ -2,9 +2,9 @@ package com.bosonit.examenJPA.headerBill.application;
 
 import com.bosonit.examenJPA.exception.EntityNotFoundException;
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
-import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDto;
-import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDtoResponse;
-import com.bosonit.examenJPA.headerBill.infraestructure.repository.HeaderBillRepository;
+import com.bosonit.examenJPA.headerBill.infrastructure.output.FacturaOutputDto;
+import com.bosonit.examenJPA.headerBill.infrastructure.output.FacturaOutputDtoResponse;
+import com.bosonit.examenJPA.headerBill.infrastructure.repository.HeaderBillRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

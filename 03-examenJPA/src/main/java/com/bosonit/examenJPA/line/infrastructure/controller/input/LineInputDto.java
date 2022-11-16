@@ -1,4 +1,4 @@
-package com.bosonit.examenJPA.line.infraestructure.controller.input;
+package com.bosonit.examenJPA.line.infrastructure.controller.input;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

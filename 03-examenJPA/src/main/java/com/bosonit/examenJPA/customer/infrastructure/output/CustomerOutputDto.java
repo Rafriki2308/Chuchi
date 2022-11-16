@@ -1,4 +1,4 @@
-package com.bosonit.examenJPA.customer.infraestructure.output;
+package com.bosonit.examenJPA.customer.infrastructure.output;
 
 import com.bosonit.examenJPA.customer.domain.Customer;
 import lombok.AllArgsConstructor;
@@ -15,6 +15,6 @@ public class CustomerOutputDto {
 
     public CustomerOutputDto(Customer customer){
         setId(customer.getId());
-        setNombre(customer.getNombre());
+        setNombre(customer.getName());
     }
 }

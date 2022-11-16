@@ -1,4 +1,4 @@
-package com.bosonit.examenJPA.customer.infraestructure.repository;
+package com.bosonit.examenJPA.customer.infrastructure.repository;
 
 import com.bosonit.examenJPA.customer.domain.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;

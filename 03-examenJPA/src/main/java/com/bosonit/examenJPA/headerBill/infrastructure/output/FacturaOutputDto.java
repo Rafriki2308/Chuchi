@@ -1,9 +1,9 @@
-package com.bosonit.examenJPA.headerBill.infraestructure.output;
+package com.bosonit.examenJPA.headerBill.infrastructure.output;
 
-import com.bosonit.examenJPA.customer.infraestructure.output.CustomerOutputDto;
+import com.bosonit.examenJPA.customer.infrastructure.output.CustomerOutputDto;
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
-import com.bosonit.examenJPA.line.infraestructure.controller.output.LineOutputDto;
-import com.bosonit.examenJPA.line.infraestructure.controller.output.LineResponseDto;
+import com.bosonit.examenJPA.line.infrastructure.controller.output.LineOutputDto;
+import com.bosonit.examenJPA.line.infrastructure.controller.output.LineResponseDto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,13 +24,14 @@ public class FacturaOutputDto {
 
     private int idFra;
     private Double importeFra;
-    private CustomerOutputDto customerOutputDto;
-    List<LineOutputDto> linesOutputDtos = new ArrayList<>();
+
+    private CustomerOutputDto cabeceraCliente;
+    List<LineOutputDto> lineasFactura = new ArrayList<>();
 
     public FacturaOutputDto(HeaderBill headerBill){
         setIdFra(headerBill.getId());
-        setCustomerOutputDto(new CustomerOutputDto(headerBill.getCustomer()));
+        setCabeceraCliente(new CustomerOutputDto(headerBill.getCustomer()));
         setImporteFra(headerBill.getImporteFra());
-        setLinesOutputDtos(lineResponseDto.mappingLineToLineDto(headerBill.getLineas()));
+        setLineasFactura(lineResponseDto.mappingLineToLineDto(headerBill.getLineas()));
     }
 }

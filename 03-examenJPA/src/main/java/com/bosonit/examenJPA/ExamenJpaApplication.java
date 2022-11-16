@@ -36,11 +36,13 @@ public class ExamenJpaApplication implements CommandLineRunner {
         Customer newCustomer = customerServiceImp.addCustomer(customer);
 
         HeaderBill headerBill = new HeaderBill(Double.parseDouble("120"), newCustomer);
+
         List<Line> lines = new ArrayList<>();
+
         Line line1 = new Line("papel_higienico", 120.00, 18.00);
         line1.setHeaderBill(headerBill);
-
         lines.add(line1);
+
         Line line2 = new Line("papel_cocina", 120.00, 18.00);
         line2.setHeaderBill(headerBill);
         lines.add(line2);

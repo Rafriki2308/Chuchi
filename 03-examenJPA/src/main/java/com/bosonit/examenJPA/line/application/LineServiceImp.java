@@ -3,11 +3,11 @@ package com.bosonit.examenJPA.line.application;
 import com.bosonit.examenJPA.exception.EntityNotFoundException;
 import com.bosonit.examenJPA.headerBill.application.HeaderBillServiceImp;
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
-import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDto;
+import com.bosonit.examenJPA.headerBill.infrastructure.output.FacturaOutputDto;
 import com.bosonit.examenJPA.line.domain.Line;
-import com.bosonit.examenJPA.line.infraestructure.controller.input.LineInputDto;
-import com.bosonit.examenJPA.line.infraestructure.controller.output.LineOutputDto;
-import com.bosonit.examenJPA.line.infraestructure.repository.LineRepository;
+import com.bosonit.examenJPA.line.infrastructure.controller.input.LineInputDto;
+import com.bosonit.examenJPA.line.infrastructure.controller.output.LineOutputDto;
+import com.bosonit.examenJPA.line.infrastructure.repository.LineRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,9 +25,6 @@ public class LineServiceImp implements LineService {
 
         return new LineOutputDto(lineRepository.save(line));
     }
-
-    ;
-
 
     public FacturaOutputDto addLineWithDto(LineInputDto lineInputDto, String idFra) {
 

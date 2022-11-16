@@ -14,41 +14,26 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="cabecera_factura")
+@Table(name = "cabecera_factura")
 public class HeaderBill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="numero_factura")
+    @Column(name = "numero_factura")
     private Integer id;
 
     @Column(name = "importe_factura")
     private Double importeFra;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_cliente")
     private Customer customer;
 
     @OneToMany(mappedBy = "headerBill", cascade = CascadeType.ALL)
     List<Line> lineas = new ArrayList<>();
 
-    public HeaderBill(Double importeFra, Customer customer){
+    public HeaderBill(Double importeFra, Customer customer) {
         setImporteFra(importeFra);
         setCustomer(customer);
     }
-
-    public HeaderBill(Double importeFra, Customer customer, Line line){
-        setImporteFra(importeFra);
-        setCustomer(customer);
-        lineas.add(line);
-    }
-
-    public HeaderBill(Double importeFra, Customer customer, List<Line> lines){
-        setImporteFra(importeFra);
-        setCustomer(customer);
-        setLineas(lines);
-    }
-
-
 
 }

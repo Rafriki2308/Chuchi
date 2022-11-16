@@ -11,6 +11,7 @@ import java.util.List;
 @Entity
 @Data
 @Table (name="cliente")
+@NoArgsConstructor
 public class Customer {
 
     @Id
@@ -19,13 +20,13 @@ public class Customer {
     private int id;
 
     @Column (name="nombre_cliente", nullable = false, length = 100)
-    private String nombre;
+    private String name;
 
     @OneToMany(mappedBy = "customer")
-    List<HeaderBill> facturas = new ArrayList<>();
+    List<HeaderBill> bill = new ArrayList<>();
 
-    public Customer(String nombre){
-        setNombre(nombre);
+    public Customer(String name){
+        setName(name);
     }
 
 }

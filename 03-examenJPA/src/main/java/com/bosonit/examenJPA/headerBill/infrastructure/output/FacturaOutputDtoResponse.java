@@ -1,4 +1,4 @@
-package com.bosonit.examenJPA.headerBill.infraestructure.output;
+package com.bosonit.examenJPA.headerBill.infrastructure.output;
 
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
 import org.springframework.stereotype.Component;

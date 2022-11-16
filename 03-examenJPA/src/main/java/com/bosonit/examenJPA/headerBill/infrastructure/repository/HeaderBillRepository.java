@@ -1,4 +1,4 @@
-package com.bosonit.examenJPA.headerBill.infraestructure.repository;
+package com.bosonit.examenJPA.headerBill.infrastructure.repository;
 
 import com.bosonit.examenJPA.headerBill.domain.HeaderBill;
 import org.springframework.data.jpa.repository.JpaRepository;

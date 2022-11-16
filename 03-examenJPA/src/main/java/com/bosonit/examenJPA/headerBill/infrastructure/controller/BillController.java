@@ -1,10 +1,9 @@
-package com.bosonit.examenJPA.headerBill.infraestructure.controller;
+package com.bosonit.examenJPA.headerBill.infrastructure.controller;
 
 import com.bosonit.examenJPA.headerBill.application.HeaderBillServiceImp;
-import com.bosonit.examenJPA.headerBill.infraestructure.output.FacturaOutputDto;
+import com.bosonit.examenJPA.headerBill.infrastructure.output.FacturaOutputDto;
 import com.bosonit.examenJPA.line.application.LineServiceImp;
-import com.bosonit.examenJPA.line.infraestructure.controller.input.LineInputDto;
-import com.bosonit.examenJPA.line.infraestructure.controller.output.LineOutputDto;
+import com.bosonit.examenJPA.line.infrastructure.controller.input.LineInputDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

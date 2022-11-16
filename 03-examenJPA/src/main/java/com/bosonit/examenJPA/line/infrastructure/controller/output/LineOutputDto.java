@@ -1,4 +1,4 @@
-package com.bosonit.examenJPA.line.infraestructure.controller.output;
+package com.bosonit.examenJPA.line.infrastructure.controller.output;
 
 import com.bosonit.examenJPA.line.domain.Line;
 import com.fasterxml.jackson.annotation.JsonIgnore;
